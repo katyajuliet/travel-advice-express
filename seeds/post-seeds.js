@@ -8,8 +8,10 @@ const postdata = [
   },
   {
     title: 'Morbi non quam nec dui luctus rutrum.',
-    post_url: 'https://nasa.gov/donec.json',
+    // post_url: 'https://nasa.gov/donec.json', replace with photo upload
     user_id: 8
+    //category
+    //review text
   },
   {
     title: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
