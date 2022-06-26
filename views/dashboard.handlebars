@@ -1,31 +1,31 @@
 <section>
-  <h2>Create New Post</h2>
+  <h2>Post a new Review</h2>
 
-  <form class="new-post-form">
+  <form class="new-review-form">
     <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+      <label for="review-title">Title</label>
+      <input type="text" id="review-title" name="review-title" />
     </div>
     <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
+      <label for="review-url">Review Text</label>
+      <input id="review-url" name="review-url" />
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
 
-{{#if posts.length}}
+{{#if reviews.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2>Your Reviews</h2>
   <ol>
-    {{#each posts as |post|}}
+    {{#each reviews as |review|}}
     <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      {{> review-info review}}
+    <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit Review</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script>
+<script src="/javascript/add-review.js"></script>

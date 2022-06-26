@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Post, Comment, Vote } = require("../../models");
+const { User, Review, Comment, Vote } = require("../../models");
 
 // Get /api/users
 router.get("/", (req, res) => {
@@ -25,22 +25,22 @@ router.get("/:id", (req, res) => {
     },
     include: [
       {
-        model: Post,
-        attributes: ["id", "title", "post_url", "created_at"],
+        model: Review,
+        attributes: ["id", "title", "review_url", "created_at"],
       },
       {
         model: Comment,
         attributes: ["id", "comment_text", "created_at"],
         include: {
-          model: Post,
+          model: Review,
           attributes: ["title"],
         },
       },
       {
-        model: Post,
+        model: Review,
         attributes: ["title"],
         through: Vote,
-        as: "voted_posts",
+        as: "voted_reviews",
       },
     ],
   })
@@ -59,7 +59,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Post /api/users
+// Review /api/users
 router.post("/", (req, res) => {
   // Access the User model and run the .Create()method)
   // this method creates a User
