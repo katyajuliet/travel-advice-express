@@ -62,6 +62,24 @@ input:focus {
   border: 1px solid #3486eb;
 }
 
+textarea,
+select {
+  padding: 15px;
+  border-radius: 5px;
+  width: 30%;
+  height: 46px;
+  color: #000;
+  font-weight: 600;
+  background-color: #34e9e947;
+  border: 0;
+}
+
+textarea:focus,
+select:focus {
+  outline: none;
+  border: 1px solid #3486eb;
+}
+
 textarea {
   min-width: 40%;
   min-height: 100px;
@@ -197,6 +215,10 @@ li{
 }
 
 .new-review-form input {
+  width: 300px;
+}
+
+.new-review-form select {
   width: 300px;
 }
 

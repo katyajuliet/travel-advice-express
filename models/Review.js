@@ -59,6 +59,10 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    review_cat: {
+      type: DataTypes.ENUM("Travel", "Airline", "Hotel", "Transportation", "Hostel", "Food", "Nightlife", "Community/Culture"),
+      allowNull: false,
+    },
     review_url: {
       type: DataTypes.STRING,
       allowNull: false,
