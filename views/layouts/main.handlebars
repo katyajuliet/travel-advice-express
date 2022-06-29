@@ -42,13 +42,13 @@
 
             <a href="https://travelbriefing.org/" class="btn-no-style">Look Up Tool</a>
 
-            <a href="/dashboard" class="btn-no-style">About</a>
+            {{!-- <a href="/dashboard" class="btn-no-style">About</a> --}}
 
             {{#if loggedIn}}
-                <a href="/dashboard" class="btn-no-style">New Post</a>
-                <button id="logout" class="btn-no-style">logout</button>
+                <a href="/" class="btn-no-style">New Post</a>
+                <button id="logout" class="btn-no-style">Logout</button>
             {{else}}
-                <a class="btn-no-style" href="/login">login</a>
+                <a class="btn-no-style" href="/login">Login</a>
             {{/if}}
         </nav>
     </header>
