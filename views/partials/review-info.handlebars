@@ -1,8 +1,10 @@
-<article class="review">
-  <div class="title">
-    {{title}}
-
-  </div>
+<article class="review article_style">
+  <a href="/review/{{id}}">
+    <img class="article_img" src="/image/blog1.jpg" />
+    <div class="title">
+      {{title}}
+    </div>
+  </a>
   <div class="meta">
     {{vote_count}}
     {{format_plural "point" vote_count}}

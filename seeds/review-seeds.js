@@ -8,10 +8,10 @@ const reviewdata = [
   },
   {
     title: "Morbi non quam nec dui luctus rutrum.",
-    // review_url: 'https://nasa.gov/donec.json', replace with photo upload
+    review_photo_upload: "Photo",
     user_id: 8,
-    //category
-    //review text
+    category_selection: "",
+    review_text_enter: "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
   },
   {
     title:

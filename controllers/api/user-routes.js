@@ -111,7 +111,7 @@ router.post("/login", (req, res) => {
 
       res.json({
         user: dbUserData,
-        message: "You're logged in, welcome to Travel Express!",
+        message: "You're logged in, welcome to Travel Story!",
       });
     });
   });

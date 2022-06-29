@@ -1,8 +1,12 @@
 <section>
   <h2>Post a new Review</h2>
 
-  <form class="new-review-form">
-    <div>
+  <form class="new-review-form" enctype="multipart/form-data">
+      <div>
+          <label for="review-file">Photo</label>
+          <input type="file" id="review-file" name="review-file" />
+      </div>
+      <div>
       <label for="review-title">Title</label>
       <input type="text" id="review-title" name="review-title" />
     </div>
@@ -17,14 +21,14 @@
 {{#if reviews.length}}
 <section>
   <h2>Your Reviews</h2>
-  <ol>
+  <div>
     {{#each reviews as |review|}}
-    <li>
+    <div class="edit_review_section">
       {{> review-info review}}
     <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit Review</a>
-    </li>
+    </div>
     {{/each}}
-  </ol>
+  </div>
 </section>
 {{/if}}
 

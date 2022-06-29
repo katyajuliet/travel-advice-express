@@ -2,38 +2,67 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Advice Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Advice Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
 </head>
 
 <body>
-  <div class="wrapper">
+<div class="wrapper">
     <header>
-      <h1>
-        <a href="/">Travel Advice Express</a>
-      </h1>
-      <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+        <div class="main_img">
+            <img src="/image/adventure-rev.png" class="size_image">
+        </div>
+        <nav>
+            <a href="/" class="btn-no-style">Home</a>
+
+            <label class="dropdown">
+
+            <div class="dd-button btn-no-style">
+                Categories
+            </div>
+
+            <input type="checkbox" class="dd-input" id="test">
+
+            <ul class="dd-menu">
+                <li>Travel</li>
+                <li>Airline</li>
+                <li>Hotel</li>
+                <li>Transportation</li>
+                <li>Hostel</li>
+                <li>Food</li>
+                <li>Nightlife</li>
+                <li>Community/Culture</li>
+
+            </ul>
+
+        </label>
+
+            <a href="https://travelbriefing.org/" class="btn-no-style">Look Up Tool</a>
+
+            <a href="/dashboard" class="btn-no-style">About</a>
+
+            {{#if loggedIn}}
+                <a href="/dashboard" class="btn-no-style">New Post</a>
+                <button id="logout" class="btn-no-style">logout</button>
+            {{else}}
+                <a class="btn-no-style" href="/login">login</a>
+            {{/if}}
+        </nav>
     </header>
     <main>
-      {{{ body }}}
+        {{{ body }}}
     </main>
     <footer>
-      Thanks for visiting!
+        Thanks for visiting!
     </footer>
-  </div>
-  
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
+</div>
+
+{{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
 
 </html>

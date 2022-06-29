@@ -15,6 +15,7 @@ class Review extends Model {
           "id",
           "review_url",
           "title",
+          "review_file",
           "created_at",
           [
             sequelize.literal(
@@ -32,6 +33,7 @@ class Review extends Model {
               "review_id",
               "user_id",
               "created_at",
+              "review_file",
             ],
             include: {
               model: models.User,
@@ -60,6 +62,10 @@ Review.init(
     review_url: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    review_file: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
