@@ -62,7 +62,7 @@ Review.init(
     },
     review_cat: {
       type: DataTypes.ENUM(
-        "travel",
+        "Travel",
         "Airline",
         "Hotel",
         "Transportation",

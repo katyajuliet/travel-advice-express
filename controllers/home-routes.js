@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
       "review_url",
       "title",
       "created_at",
+      "review_cat",
       [
         sequelize.literal(
           "(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)"
@@ -44,9 +45,8 @@ router.get("/", (req, res) => {
 
       res.render("homepage", {
         reviews,
-        loggedIn: req.session.loggedIn, 
+        loggedIn: req.session.loggedIn,
       });
-    
     })
     .catch((err) => {
       console.log(err);
