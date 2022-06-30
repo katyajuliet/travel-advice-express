@@ -14,7 +14,7 @@ async function newFormHandler(event) {
       review_file,
       title,
       review_url,
-      review_cat,
+      review_cat
     }),
     headers: {
       "Content-Type": "application/json",

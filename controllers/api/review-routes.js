@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
       "title",
       "review_file",
       "created_at",
+      "review_cat",
       [
         sequelize.literal(
           "(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)"
@@ -59,6 +60,7 @@ router.get("/:id", (req, res) => {
       "title",
       "review_file",
       "created_at",
+      "review_cat",
       [
         sequelize.literal(
           "(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)"
@@ -102,11 +104,12 @@ router.get("/:id", (req, res) => {
 
 router.post("/", withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', review_url: 'https://taskmaster.com/press', user_id: 1}
-
+console.log(req.body.review_cat)
   Review.create({
     title: req.body.title,
     review_url: req.body.review_url,
     review_file: req.body.review_file,
+    review_cat: req.body.review_cat,
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
