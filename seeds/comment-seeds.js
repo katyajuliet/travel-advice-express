@@ -7,7 +7,7 @@ for (let i = 0; i < 100; i++) {
   let createdComment = {
     comment_text: faker.lorem.sentence(),
     user_id: faker.mersenne.rand(10, 1),
-    review_id: faker.mersenne.rand(30, 1),
+    review_id: faker.mersenne.rand(10, 1),
   };
   commentdata.push(createdComment);
 }

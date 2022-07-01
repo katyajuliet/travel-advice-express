@@ -3,7 +3,7 @@ const { faker } = require("@faker-js/faker");
 
 const reviewdata = [];
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 10; i++) {
   let createdReview = {
     title: faker.lorem.sentence(5),
     review_url: faker.lorem.paragraph(),
