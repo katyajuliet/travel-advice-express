@@ -8,6 +8,16 @@ for (let i = 0; i < 30; i++) {
     title: faker.lorem.sentence(5),
     review_url: faker.lorem.paragraph(),
     user_id: faker.mersenne.rand(10, 1),
+    review_cat: faker.helpers.arrayElement([
+      "Travel",
+      "Airline",
+      "Hotel",
+      "Transportation",
+      "Hostel",
+      "Food",
+      "Nightlife",
+      "Community/Culture",
+    ]),
   };
   reviewdata.push(createdReview);
 }
