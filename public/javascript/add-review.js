@@ -5,6 +5,7 @@ async function newFormHandler(event) {
   const title = document.querySelector('input[name="review-title"]').value;
   const review_url = document.querySelector('input[name="review-url"]').value;
   const review_file =  document.querySelector('input[name="review-file"]').value;
+  const review_cat =  document.getElementById('review_cat').value;
 
 
 
@@ -14,7 +15,7 @@ async function newFormHandler(event) {
       review_file,
       title,
       review_url,
-      review_cat
+      review_cat,
     }),
     headers: {
       "Content-Type": "application/json",

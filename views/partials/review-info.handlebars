@@ -1,15 +1,19 @@
+<article class="review article_style">
+    <a href="/review/{{id}}">
+        <img class="article_img" src="/image/blog1.jpg"/>
+        <div class="title">
+            <h1>{{title}}</h1>
+            <h5>{{user.username}}</h5>
 
-    <article class="review article_style">
-      <a href="/review/{{id}}">
-      <img class="article_img" src="/image/blog1.jpg" />
-      <div class="title">
-        <h1>{{title}}</h1>
-        <h5>{{user.username}}</h5>
-        <p>{{review_url}}</p>
-        <p>{{review_cat}}</p>
-      </div>
+            {{#if loggedIn}}
+                <p>{{review_url}}</p>
+            {{/if}}
+
+            <p>{{review_cat}}</p>
+        </div>
     </a>
-      <div class="meta">
+    <div class="meta">
+{{#if loggedIn}}
         {{vote_count}}
         {{format_plural "point" vote_count}}
         by
@@ -18,6 +22,11 @@
         {{format_date created_at}}
         |
         <a href="/review/{{id}}">{{comments.length}}
-          {{format_plural "comment" comments.length}}</a>
-      </div>
+            {{format_plural "comment" comments.length}}</a>
+{{/if}}
+    </div>
 </article>
+<script>
+
+    console.log({{loggedIn}})
+</script>

@@ -5,7 +5,6 @@ const withAuth = require("../../utils/auth");
 
 // get all users
 router.get("/", (req, res) => {
-  console.log("======================");
   Review.findAll({
     attributes: [
       "id",
@@ -50,7 +49,9 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Review.findOne({
+
+
+   Review.findOne({
     where: {
       id: req.params.id,
     },
@@ -104,7 +105,6 @@ router.get("/:id", (req, res) => {
 
 router.post("/", withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', review_url: 'https://taskmaster.com/press', user_id: 1}
-console.log(req.body.review_cat)
   Review.create({
     title: req.body.title,
     review_url: req.body.review_url,
