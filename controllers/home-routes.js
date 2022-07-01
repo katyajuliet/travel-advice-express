@@ -7,9 +7,30 @@ const withAuth = require("../utils/auth");
 
 // get all reviews for homepage
 router.get("/", (req, res) => {
+<<<<<<< HEAD
 
 
     Review.findAll({
+=======
+  console.log("======================");
+  Review.findAll({
+    attributes: [
+      "id",
+      "review_url",
+      "title",
+      "created_at",
+      "review_cat",
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)"
+        ),
+        "vote_count",
+      ],
+    ],
+    include: [
+      {
+        model: Comment,
+>>>>>>> 57dd820fe1e5caa8f17989131194916eb5771535
         attributes: [
             "id",
             "review_url",
@@ -22,6 +43,7 @@ router.get("/", (req, res) => {
                 "vote_count",
             ],
 
+<<<<<<< HEAD
         ],
         include: [
             {
@@ -43,6 +65,12 @@ router.get("/", (req, res) => {
                 attributes: ["username"],
             },
         ],
+=======
+      res.render("homepage", {
+        reviews,
+        loggedIn: req.session.loggedIn,
+      });
+>>>>>>> 57dd820fe1e5caa8f17989131194916eb5771535
     })
         .then((dbPostData) => {
             const reviews = dbPostData.map((review) => review.get({plain: true}));

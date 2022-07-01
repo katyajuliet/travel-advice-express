@@ -62,7 +62,7 @@ Review.init(
     },
     review_cat: {
       type: DataTypes.ENUM(
-        "travel",
+        "Travel",
         "Airline",
         "Hotel",
         "Transportation",
@@ -74,7 +74,7 @@ Review.init(
       allowNull: false,
     },
     review_url: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     review_file: {
