@@ -16,6 +16,7 @@ router.get("/", withAuth, (req, res) => {
       "review_url",
       "title",
       "created_at",
+      "review_cat",
       [
         sequelize.literal(
           "(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)"
@@ -61,6 +62,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
       "review_url",
       "title",
       "created_at",
+      "review_cat",
       [
         sequelize.literal(
           "(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)"

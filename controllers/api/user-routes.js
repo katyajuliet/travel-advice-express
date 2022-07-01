@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 
 //Get /api/users/1
 router.get("/:id", (req, res) => {
-  // Acces the User model and run the .findOne()method)
+  // Access the User model and run the .findOne()method)
   User.findOne({
     attributes: { exclude: ["password"] },
     where: {
