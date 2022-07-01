@@ -5,13 +5,14 @@ const withAuth = require("../../utils/auth");
 
 // get all users
 router.get("/", (req, res) => {
-  console.log("======================");
   Review.findAll({
     attributes: [
       "id",
       "review_url",
       "title",
+      "review_file",
       "created_at",
+      "review_cat",
       [
         sequelize.literal(
           "(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)"
@@ -48,7 +49,9 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Review.findOne({
+
+
+   Review.findOne({
     where: {
       id: req.params.id,
     },
@@ -56,7 +59,9 @@ router.get("/:id", (req, res) => {
       "id",
       "review_url",
       "title",
+      "review_file",
       "created_at",
+      "review_cat",
       [
         sequelize.literal(
           "(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)"
@@ -103,6 +108,8 @@ router.post("/", withAuth, (req, res) => {
   Review.create({
     title: req.body.title,
     review_url: req.body.review_url,
+    review_file: req.body.review_file,
+    review_cat: req.body.review_cat,
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
@@ -150,7 +157,7 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-  console.log("id", req.params.id);
+
   Review.destroy({
     where: {
       id: req.params.id,

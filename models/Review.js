@@ -15,7 +15,9 @@ class Review extends Model {
           "id",
           "review_url",
           "title",
+          "review_file",
           "created_at",
+          "review_cat",
           [
             sequelize.literal(
               "(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)"
@@ -32,6 +34,7 @@ class Review extends Model {
               "review_id",
               "user_id",
               "created_at",
+              "review_file",
             ],
             include: {
               model: models.User,
@@ -57,9 +60,26 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    review_cat: {
+      type: DataTypes.ENUM(
+        "travel",
+        "Airline",
+        "Hotel",
+        "Transportation",
+        "Hostel",
+        "Food",
+        "Nightlife",
+        "Community/Culture"
+      ),
+      allowNull: false,
+    },
     review_url: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    review_file: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,

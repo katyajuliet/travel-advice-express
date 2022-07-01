@@ -35,5 +35,15 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(require("./controllers/"));
 
 sequelize.sync({ force: false }).then(() => {
+  console.log(`listening on port ${PORT}`)
   app.listen(PORT, () => console.log("Now listening"));
 });
+
+
+
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
+app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
+
+
+

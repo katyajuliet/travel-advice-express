@@ -46,7 +46,7 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((dbPostData) => {
       const reviews = dbPostData.map((review) => review.get({ plain: true }));
-      res.render("dashboard", { reviews, loggedIn: true });
+      res.render("dashboard", {reviews, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
