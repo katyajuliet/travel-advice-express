@@ -1,4 +1,5 @@
 <article class="review article_style">
+<<<<<<< HEAD
     <a href="/review/{{id}}">
         <img class="article_img" src="/image/blog1.jpg"/>
         <div class="title">
@@ -30,3 +31,26 @@
 
     console.log({{loggedIn}})
 </script>
+=======
+  <a href="/review/{{id}}">
+    <img class="article_img" src="/image/blog{{id}}.jpg" />
+    <div class="title">
+      <h1>{{title}}</h1>
+      <h5>{{user.username}}</h5>
+      <p>{{review_url}}</p>
+      <p>{{review_cat}}</p>
+    </div>
+  </a>
+  <div class="meta">
+    {{vote_count}}
+    {{format_plural "point" vote_count}}
+    by
+    {{user.username}}
+    on
+    {{format_date created_at}}
+    |
+    <a href="/review/{{id}}">{{comments.length}}
+      {{format_plural "comment" comments.length}}</a>
+  </div>
+</article>
+>>>>>>> 57dd820fe1e5caa8f17989131194916eb5771535
