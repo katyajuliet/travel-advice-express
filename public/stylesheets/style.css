@@ -122,6 +122,12 @@ main {
   padding: 2% 4%;
 }
 
+main h2 {
+  text-align: center;
+  color:#33629b;
+  font-family:fantasy;
+}
+
 .btn-no-style {
   background: none;
   border: none;
