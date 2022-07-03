@@ -1,19 +1,20 @@
 <article class="review article_style">
     <a href="/review/{{id}}">
-        <img class="article_img" src="/image/blog1.jpg"/>
         <div class="title">
             <h1>{{title}}</h1>
             <h5>{{user.username}}</h5>
+        <img id='img' class="article_img" src="" />
 
             {{#if loggedIn}}
-                <p>{{review_url}}</p>
+            <p>{{review_url}}</p>
             {{/if}}
 
             <p>{{review_cat}}</p>
         </div>
     </a>
     <div class="meta">
-{{#if loggedIn}}
+        {{#if loggedIn}}
+        {{!-- <img id='img' class="article_img" src='{{review_file}}' /> --}}
         {{vote_count}}
         {{format_plural "point" vote_count}}
         by
@@ -23,10 +24,18 @@
         |
         <a href="/review/{{id}}">{{comments.length}}
             {{format_plural "comment" comments.length}}</a>
-{{/if}}
+        {{/if}}
     </div>
 </article>
 <script>
+    console.log(document.querySelectorAll('.review '))
+    if (document.querySelectorAll('.edit_review_section').length) {
 
-    console.log({{loggedIn}})
+
+        for (let i = 0; i < document.querySelectorAll('.edit_review_section').length; i++) {
+             document.querySelectorAll('#img')[i].src = localStorage[i]
+            // console.log(localStorage[i])
+        }
+    }
+
 </script>
