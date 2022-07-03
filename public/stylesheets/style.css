@@ -27,7 +27,7 @@ button {
   background-color: #49e2ff;
   border: 0;
   padding: 1em 3em;
-  color: white;
+  color: black;
   font-weight: bold;
   transition: background-color 0.1s;
   cursor: pointer;
@@ -193,12 +193,14 @@ li{
 
 }
 .upvote-btn {
-  background-color: #197d0f;
+  background-color: #619af5c9;
   transition: background-color 0.1s;
+  color: black;
 }
 
 .upvote-btn:hover {
-  background-color: #1f9c13;
+  background-color: #76a8f9;
+  color: black;
 }
 
 .comment-form {
@@ -211,7 +213,8 @@ li{
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+  background-color: #faf4c27b;
+  border-radius: 8px;
 }
 
 .comment .meta {
