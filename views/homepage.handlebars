@@ -9,3 +9,14 @@
         </li>
     {{/each}}
 </ol>
+
+<script>
+        if (document.querySelectorAll('.review').length) {
+
+
+        for (let i = 0; i < document.querySelectorAll('.review').length; i++) {
+             document.querySelectorAll('#img')[i].src = localStorage[i]
+            console.log(localStorage[i])
+        }
+    }
+</script>

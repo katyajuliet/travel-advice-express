@@ -1,10 +1,16 @@
 <section>
     <h2>Post a new Review</h2>
+    <div class="container">
+        <button id="upload" data-upload-config='{ "multi": true }'>
+            Open the Uploader
+        </button>
+
+    </div>
 
     <form class="new-review-form" enctype="multipart/form-data">
         <div>
             <label for="review-file">Photo</label>
-            <input type="file" id="review-file" name="review-file"/>
+            <input type="text" id="review-file" name="review-file" disabled='true'/>
         </div>
         <div>
             <label for="review-title">Title</label>
@@ -38,6 +44,7 @@
             {{#each reviews as |review|}}
                 <div class="edit_review_section">
                     {{> review-info review}}
+                    <img id='img' class="article_img" src='{{review_file}}' />
                     <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit Review</a>
                 </div>
             {{/each}}
@@ -45,4 +52,77 @@
     </section>
 {{/if}}
 
+    <script src="https://js.upload.io/uploader/v1"></script>
 <script src="/javascript/add-review.js"></script>
+{{!-- <script src="../public/javascript/uploader.js"></script> --}}
+<script>
+    const uploader = new Uploader({
+    // Get production API keys from Upload.io
+    apiKey: "free"
+  });
+  // let photo_url = document.getElementById('review-file')
+
+document.getElementById('upload').addEventListener('click', function() {
+const myCustomLocale = {
+"error!":              "Error!",
+"done":                "Done",
+"addAnotherFile":      "Add another file...",
+"cancel":              "cancel",
+"cancelled!":          "cancelled",
+"continue":            "Continue",
+"crop":                "Crop",
+"finish":              "Finished",
+"finishIcon":          true,
+"maxSize":             "File size limit:",
+"next":                "Next",
+"orDragDropFile":      "...or drag and drop a file.",
+"orDragDropFiles":     "...or drag and drop files.",
+"pleaseWait":          "Please wait...",
+"removed!":            "removed",
+"remove":              "remove",
+"skip":                "Skip",
+//   "unsupportedFileType": "File type not supported.",
+"uploadFile":          "Select a File",
+"uploadFiles":         "Select Files"
+}
+
+  uploader
+.open({
+container: "body",           // "body" by default.
+layout: "modal",             // "modal" by default. "inline" also supported.
+ locale: myCustomLocale,      // EN_US by default. (See "Localization" section below.)
+maxFileSizeBytes: 1024 ** 2, // Unlimited by default.
+mimeTypes: ["image/jpeg"],   // Unrestricted by default.
+multi: false,                // False by default.
+onUpdate: files => {},       // Called each time the list of uploaded files change.
+showFinishButton: true,      // Whether to show the "finish" button in the widget.
+showRemoveButton: true,      // Whether to show the "remove" button next to each file.
+styles: {
+  colors: {
+    primary: "#377dff",      // Primary color (e.g. buttons).
+    active: "#528fff"        // Active/hover color (inferred from primary by default).
+  },
+  fontSizes: {
+    base: 16                 // Base font size (px).
+  }
+},
+// tags: ["profile_picture"],   // Requires an Upload.io account.
+editor: {
+  images: {
+    crop: true,              // True by default.
+    cropRatio: 4 / 3,        // width / height. undefined enables freeform (default).
+    cropShape: "rect"        // "rect" (default) or "circ".
+  }
+},
+})
+.then(files => {
+// img.src = JSON.stringify(files)
+// let photo_url = document.getElementById('review-file')
+let photo_url = document.getElementById('review-file')
+  photo_url.value=files[0].fileUrl
+
+localStorage.setItem(localStorage.length, files[0].fileUrl)
+
+})
+})
+</script>
