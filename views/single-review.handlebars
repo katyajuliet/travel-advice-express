@@ -1,4 +1,4 @@
-{{> review-info review}}
+{{> review-info review }}
 <style>
 .article_style{
   width: 100%;
@@ -23,3 +23,13 @@
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
 {{/if}}
+
+<script>
+        if (document.querySelectorAll('.review').length) {
+        for (let i = 0; i < document.querySelectorAll('.review').length; i++) {
+             document.querySelectorAll('#img')[i].src = localStorage[i]
+            console.log(localStorage[i])
+        }
+    }
+</script>
+

@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "DejaVu Sans Mono";
+  font-family: sans-serif;
 }
 
 body,
@@ -128,6 +128,11 @@ main h2 {
   font-family:fantasy;
 }
 
+main a, ol, li {
+  color:#33629b;
+  font-family:fantasy;
+}
+
 .btn-no-style {
   background: none;
   border: none;
@@ -139,6 +144,7 @@ main h2 {
   font-weight: bold;
   transition: color 0.1s;
   margin-left: 16px;
+  font-family:fantasy;
 }
 
 .btn-no-style:hover {
@@ -215,6 +221,7 @@ li{
 .comment:nth-child(odd) {
   background-color: #faf4c27b;
   border-radius: 8px;
+
 }
 
 .comment .meta {
@@ -235,12 +242,14 @@ li{
   margin-bottom: 5%;
 }
 
-footer {
+footer h3 {
   border-top: 1px solid #ccc;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 1%;
-  font-size: 110%;
+  padding: 2%;
+  font-size: 100%;
+  font-family: fantasy;
 }
 
 

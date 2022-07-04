@@ -74,11 +74,12 @@ Review.init(
       allowNull: false,
     },
     review_url: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     review_file: {
       type: DataTypes.STRING,
+
       allowNull: true,
     },
     user_id: {
