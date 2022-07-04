@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "DejaVu Sans Mono";
+  font-family: sans-serif;
 }
 
 body,
@@ -27,7 +27,7 @@ button {
   background-color: #49e2ff;
   border: 0;
   padding: 1em 3em;
-  color: white;
+  color: black;
   font-weight: bold;
   transition: background-color 0.1s;
   cursor: pointer;
@@ -87,11 +87,13 @@ textarea {
 
 form > div {
   margin-bottom: 2%;
+  
 }
 
 form label {
   display: block;
 }
+
 
 .wrapper {
   width: 100%;
@@ -122,6 +124,17 @@ main {
   padding: 2% 4%;
 }
 
+main h2 {
+  text-align: center;
+  color:#33629b;
+  font-family:fantasy;
+}
+
+main a, ol, li {
+  color:#33629b;
+  font-family:fantasy;
+}
+
 .btn-no-style {
   background: none;
   border: none;
@@ -133,6 +146,7 @@ main {
   font-weight: bold;
   transition: color 0.1s;
   margin-left: 16px;
+  font-family:fantasy;
 }
 
 .btn-no-style:hover {
@@ -170,6 +184,9 @@ main {
 .article_img{
   width: -webkit-fill-available;
 }
+.article_h4{
+  padding: 10px;
+}
 li{
   list-style-type: none;
 }
@@ -184,15 +201,50 @@ li{
   margin: -1.5% 0 2% 0;
 }
 .edit_review_section{
-
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.reviews-title {
+  padding: 20px;
+}
+
+.reviews-title h2 {
+  font-size: 30px;
+  font-family: fantasy;
+  color: black;
+}
+
+.form-entry {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+}
+
+.form-entry h3 {
+  font-size: 30px;
+  font-family: fantasy;
+}
+
 .upvote-btn {
-  background-color: #197d0f;
+  background-color: #619af5c9;
   transition: background-color 0.1s;
+  color: black;
 }
 
 .upvote-btn:hover {
-  background-color: #1f9c13;
+  background-color: #76a8f9;
+  color: black;
 }
 
 .comment-form {
@@ -205,7 +257,9 @@ li{
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+  background-color: #faf4c27b;
+  border-radius: 8px;
+
 }
 
 .comment .meta {
@@ -226,12 +280,14 @@ li{
   margin-bottom: 5%;
 }
 
-footer {
+footer h3 {
   border-top: 1px solid #ccc;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 1%;
-  font-size: 110%;
+  padding: 2%;
+  font-size: 100%;
+  font-family: fantasy;
 }
 
 

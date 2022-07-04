@@ -111,7 +111,7 @@ router.post("/login", (req, res) => {
 
       res.json({
         user: dbUserData,
-        message: "You're logged in, welcome to Travel Express!",
+        message: "You're logged in, welcome to Travel Story!",
       });
     });
   });
@@ -130,7 +130,7 @@ router.post("/logout", (req, res) => {
 //Put /api/users/1
 router.put("/:id", (req, res) => {
   // Access the User model and run the .Update()method)
-  // this method combines the parametes to crete and look up data
+  // this method combines the parameters to crete and look up data
   // pass in req.body to provide new data
   // use where;{ req.params.id} to indicate where new data is to be used
   User.update(req.body, {

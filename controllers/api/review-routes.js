@@ -136,6 +136,7 @@ router.put("/:id", withAuth, (req, res) => {
   Review.update(
     {
       title: req.body.title,
+      review_url: req.body.review_url,
     },
     {
       where: {
