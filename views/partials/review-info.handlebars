@@ -1,9 +1,15 @@
 <article class="review article_style">
     <a href="/review/{{id}}">
         <div class="title">
+<<<<<<< HEAD
             <h1>{{title}}</h1>
             <h5>{{user.username}}</h5>
         <img id='img' class="article_img" src="" />
+=======
+        <img id='img' class="article_img" src="" />
+         <h1>{{title}}</h1>
+         <h5>{{user.username}}</h5>
+>>>>>>> katya/upload
 
             {{#if loggedIn}}
             <p>{{review_url}}</p>
@@ -31,11 +37,20 @@
     console.log(document.querySelectorAll('.review '))
     if (document.querySelectorAll('.edit_review_section').length) {
 
+<<<<<<< HEAD
 
+=======
+    console.log({{loggedIn}})
+    console.log(document.querySelectorAll('.review '))
+    if (document.querySelectorAll('.edit_review_section').length) {
+>>>>>>> katya/upload
         for (let i = 0; i < document.querySelectorAll('.edit_review_section').length; i++) {
              document.querySelectorAll('#img')[i].src = localStorage[i]
             // console.log(localStorage[i])
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> katya/upload
 </script>

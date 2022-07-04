@@ -8,8 +8,9 @@
   <form class="edit-review-form">
     <div>
       <input name="review-title" type="text" value="{{review.title}}" />
-      <span>({{format_url review.review_url}})</span>
+      <input name="review-url" type="string" value="{{review.review_url}}'/><br><br>
     </div>
+
     <div>
       {{review.vote_count}} {{format_plural "point" review.vote_count}} by you on {{format_date review.created_at}}
       |

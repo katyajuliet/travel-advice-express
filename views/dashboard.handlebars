@@ -1,5 +1,9 @@
 <section>
+<<<<<<< HEAD
     <h2>Post a new Review</h2>
+=======
+    <h3>Post Your Adventure Review</h3>
+>>>>>>> katya/upload
     <div class="container">
         <button id="upload" data-upload-config='{ "multi": true }'>
             Open the Uploader
@@ -52,7 +56,11 @@
     </section>
 {{/if}}
 
+<<<<<<< HEAD
     <script src="https://js.upload.io/uploader/v1"></script>
+=======
+   <script src="https://js.upload.io/uploader/v1"></script>
+>>>>>>> katya/upload
 <script src="/javascript/add-review.js"></script>
 {{!-- <script src="../public/javascript/uploader.js"></script> --}}
 <script>
@@ -61,7 +69,10 @@
     apiKey: "free"
   });
   // let photo_url = document.getElementById('review-file')
+<<<<<<< HEAD
 
+=======
+>>>>>>> katya/upload
 document.getElementById('upload').addEventListener('click', function() {
 const myCustomLocale = {
 "error!":              "Error!",
@@ -85,7 +96,10 @@ const myCustomLocale = {
 "uploadFile":          "Select a File",
 "uploadFiles":         "Select Files"
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> katya/upload
   uploader
 .open({
 container: "body",           // "body" by default.
@@ -120,9 +134,13 @@ editor: {
 // let photo_url = document.getElementById('review-file')
 let photo_url = document.getElementById('review-file')
   photo_url.value=files[0].fileUrl
+<<<<<<< HEAD
 
 localStorage.setItem(localStorage.length, files[0].fileUrl)
 
+=======
+localStorage.setItem(localStorage.length, files[0].fileUrl)
+>>>>>>> katya/upload
 })
 })
 </script>
