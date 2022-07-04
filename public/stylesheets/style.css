@@ -174,7 +174,7 @@ main a, ol, li {
   padding-left: 20px;
   min-height: 29em;
 }
-.article_style .title{
+.article_style .title {
   color: #000;
 }
 .article_style .meta a, .article_style .meta{
@@ -183,6 +183,10 @@ main a, ol, li {
 }
 .article_img{
   width: -webkit-fill-available;
+}
+
+.article_p{
+  font-style: normal;
 }
 .article_h4{
   padding: 10px;

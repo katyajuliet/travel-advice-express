@@ -37,8 +37,9 @@
         <div>
             {{#each reviews as |review|}}
                 <div class="edit_review_section">
-                    {{> review-info review}}
-                    <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit Review</a>
+                  {{> review-info review edit =1 loggedIn = ../loggedIn}}
+                    {{!-- {{> review-info review}}
+                    <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit Review</a> --}}
                 </div>
             {{/each}}
         </div>
