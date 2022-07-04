@@ -1,4 +1,4 @@
-<section>
+<section class="form-entry">
     <h3>Post Your Adventure Review</h3>
     <div class="container">
         <button id="upload" data-upload-config='{ "multi": true }'>
@@ -33,18 +33,18 @@
             <option value="Community/Culture">Community/Culture</option>
             </select>
         </div>
-        <button type="submit" class="btn">Create</button>
+        <button type="submit" id="button" class="btn">Create</button>
     </form>
 </section>
 
 {{#if reviews.length}}
-    <section>
+    <section class="reviews-title">
         <h2>Your Reviews</h2>
         <div>
             {{#each reviews as |review|}}
                 <div class="edit_review_section">
                     {{> review-info review}}
-                    <img id='img' class="article_img" src='{{review_file}}' />
+                    {{!-- <img id='img' class="article_img" src='{{review_file}}' /> --}}
                     <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit Review</a>
                 </div>
             {{/each}}
