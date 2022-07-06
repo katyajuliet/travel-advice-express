@@ -1,0 +1,31 @@
+<article class="review article_style">
+  <a href="/review/{{id}}">
+    <img class="article_img" src="/image/blog{{id}}.jpg" />
+    <div class="title">
+      <h1>{{title}}</h1>
+      {{#if edit}}
+        <a href="/dashboard/edit/{{id}}" class="edit-link">Edit Review</a>
+      {{/if}}
+      <h5>{{user.username}}</h5>
+
+      {{#if loggedIn}}
+        <p>{{review_text}}</p>
+      {{/if}}
+
+      <p>{{review_cat}}</p>
+    </div>
+  </a>
+  <div class="meta">
+    {{#if loggedIn}}
+      {{vote_count}}
+      {{format_plural "point" vote_count}}
+      by
+      {{user.username}}
+      on
+      {{format_date created_at}}
+      |
+      <a href="/review/{{id}}">{{comments.length}}
+        {{format_plural "comment" comments.length}}</a>
+    {{/if}}
+  </div>
+</article>

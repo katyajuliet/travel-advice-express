@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Story</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body>
+<div class="wrapper">
+    <header>
+        <div class="main_img">
+            <img src="/image/adventure-rev.png" class="size_image">
+        </div>
+        <nav>
+            <a href="/" class="btn-no-style">Home</a>
+
+            <label class="dropdown">
+
+            <div class="dd-button btn-no-style">
+                Categories
+            </div>
+
+            <input type="checkbox" class="dd-input" id="test">
+
+            <ul class="dd-menu">
+                <li>Travel</li>
+                <li>Airline</li>
+                <li>Hotel</li>
+                <li>Transportation</li>
+                <li>Hostel</li>
+                <li>Food</li>
+                <li>Nightlife</li>
+                <li>Community/Culture</li>
+
+            </ul>
+
+        </label>
+
+            <a href="https://travelbriefing.org/" target="_blank" class="btn-no-style">Look Up Tool</a>
+
+            {{!-- <a href="/dashboard" class="btn-no-style">About</a> --}}
+
+            {{#if loggedIn}}
+                <a href="/dashboard" class="btn-no-style">New Post / Edit Post</a>
+                <button id="logout" class="btn-no-style">Logout</button>
+            {{else}}
+                <a class="btn-no-style" href="/login">Login</a>
+            {{/if}}
+        </nav>
+    </header>
+    <main>
+        {{{ body }}}
+    </main>
+    <footer>
+        <h3>© 2022 Thanks for sharing your Adventure Review with Travel Story!</h3>
+    </footer>
+</div>
+
+{{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+{{/if}}
+</body>
+
+</html>
