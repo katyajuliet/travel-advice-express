@@ -6,7 +6,7 @@
 * [Installation](#Installation)
 * [Collaborators](#Collaborators)
 * [Screenshot](#Screenshot)
-* [License] (#license)
+* [License](#license)
 
 ## Description
 Project 2: Scott, Katya, Michael and Farah - Travel Review Site with login / logout dashboard, ability to post reviews with photo, title, location, review text with travel categories. After sign up or registration, users can post, edit, delete and / or comment on other posts.
