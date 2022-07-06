@@ -13,7 +13,7 @@ class Review extends Model {
         },
         attributes: [
           "id",
-          "review_url",
+          "review_text",
           "title",
           "review_file",
           "created_at",
@@ -73,8 +73,8 @@ Review.init(
       ),
       allowNull: false,
     },
-    review_url: {
-      type: DataTypes.STRING,
+    review_text: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     review_file: {

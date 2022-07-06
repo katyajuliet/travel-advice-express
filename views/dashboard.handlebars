@@ -11,8 +11,8 @@
       <input type="text" id="review-title" name="review-title" />
     </div>
     <div>
-      <label for="review-url">Review Text</label>
-      <input id="review-url" name="review-url" />
+      <label for="review-text">Review Text</label>
+      <input id="review-text" name="review-text" />
     </div>
      <div>
       <label for="review_cat">Review Category</label>
@@ -37,7 +37,7 @@
         <div>
             {{#each reviews as |review|}}
                 <div class="edit_review_section">
-                  {{> review-info review edit =1 loggedIn = ../loggedIn}}
+                  {{> slice review edit =1 loggedIn = ../loggedIn}}
                     {{!-- {{> review-info review}}
                     <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit Review</a> --}}
                 </div>

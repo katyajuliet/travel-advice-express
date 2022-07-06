@@ -18,5 +18,12 @@ module.exports = {
     }
 
     return word;
-  }
+  },
+
+   slice: (str) => {
+    return str.slice (0,130)
+   }
+
+
+
 };

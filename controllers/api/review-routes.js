@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   Review.findAll({
     attributes: [
       "id",
-      "review_url",
+      "review_text",
       "title",
       "review_file",
       "created_at",
@@ -49,15 +49,13 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-
-
-   Review.findOne({
+  Review.findOne({
     where: {
       id: req.params.id,
     },
     attributes: [
       "id",
-      "review_url",
+      "review_text",
       "title",
       "review_file",
       "created_at",
@@ -104,10 +102,10 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', review_url: 'https://taskmaster.com/press', user_id: 1}
+  // expects {title: 'Taskmaster goes public!', review_text: 'https://taskmaster.com/press', user_id: 1}
   Review.create({
     title: req.body.title,
-    review_url: req.body.review_url,
+    review_text: req.body.review_text,
     review_file: req.body.review_file,
     review_cat: req.body.review_cat,
     user_id: req.session.user_id,
@@ -157,7 +155,6 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-
   Review.destroy({
     where: {
       id: req.params.id,

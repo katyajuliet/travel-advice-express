@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
   Review.findAll({
     attributes: [
       "id",
-      "review_url",
+      "review_text",
       "title",
       "created_at",
       "review_cat",
@@ -64,7 +64,7 @@ router.get("/review/:id", withAuth, (req, res) => {
     },
     attributes: [
       "id",
-      "review_url",
+      "review_text",
       "title",
       "created_at",
       "review_cat",

@@ -13,7 +13,7 @@ router.get("/", withAuth, (req, res) => {
     },
     attributes: [
       "id",
-      "review_url",
+      "review_text",
       "title",
       "created_at",
       [
@@ -46,7 +46,7 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((dbPostData) => {
       const reviews = dbPostData.map((review) => review.get({ plain: true }));
-      res.render("dashboard", {reviews, loggedIn: true });
+      res.render("dashboard", { reviews, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
@@ -58,7 +58,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
   Review.findByPk(req.params.id, {
     attributes: [
       "id",
-      "review_url",
+      "review_text",
       "title",
       "created_at",
       [
