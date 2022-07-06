@@ -1,4 +1,4 @@
-# Travel Story - Adventure Reviews
+Travel Story - Adventure Reviews
 
 ## Table of Contents
 * [Project Description](#Description)
@@ -15,7 +15,7 @@ Project 2: Scott, Katya, Michael and Farah - Travel Review Site with login / log
 [Heroku Link](https://adventure-reviews.herokuapp.com/)
 
 ## Installation
-Clone public repo with "git clone" [link] (https://github.com/katyajuliet/travel-advice-express)
+Clone public repo with "git clone" [link](https://github.com/katyajuliet/travel-advice-express)
 
 run to install the dependencies from package.json
 
@@ -23,7 +23,7 @@ run to install the dependencies from package.json
 npm i or npm install
 
 ```
-Requires MSQL2 
+<strong>Dependencies include:</strong> bcrypt, bootstrap, connect-session-sequelize, dotenv, express, express-handlebars, express-session, faker, handlebars, jquery, multer, mysql2, sequelize, jest.
 
 Required <br>
 [New Npm Faker](https://fakerjs.dev/guide/)<br>
