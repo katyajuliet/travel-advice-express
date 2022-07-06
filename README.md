@@ -24,6 +24,5 @@ This npm package seeds the database with npm run seeds
 
 
 ##### Screenshot of Homepage
-
-![screenshot]<img src="../../public/image/travel-story-screenshot.png">
+<img src="../../public/image/travel-story-screenshot.png">
 
